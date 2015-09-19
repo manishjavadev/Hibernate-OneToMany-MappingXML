@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping package="com.manish.javadev.model">
+
+	<class name="Order" table="orders">
+		<id name="orderId" type="int">
+			<generator class="increment" />
+		</id>
+		<property name="totalQty" column="TotalQuantity" type="int" />
+		<property name="totalCost" column="TCOST" type="double" />
+		<property name="orderDate" column="ODATE" type="date" />
+		<property name="status" column="STATUS" />
+		<many-to-one name="customer" class="Customer" column="cid" />
+	</class>
+</hibernate-mapping>
